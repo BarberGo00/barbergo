@@ -1,0 +1,44 @@
+[build]
+  # Comando para build do projeto
+  command = "pnpm install && pnpm build"
+  
+  # Diretório onde ficam os arquivos buildados (frontend)
+  publish = "dist/public"
+  
+  # Variáveis de ambiente para o build
+  [build.environment]
+    NODE_VERSION = "22.13.0"
+    NPM_FLAGS = "--legacy-peer-deps"
+
+# Configuração para SPA (Single Page Application)
+# Redireciona todas as rotas para index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de segurança
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache para assets estáticos
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache para imagens
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
