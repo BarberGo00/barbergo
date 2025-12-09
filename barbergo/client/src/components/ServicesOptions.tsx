@@ -16,25 +16,25 @@ export default function ServicesOptions() {
     {
       id: 1,
       title: "Corte Completo",
-      description: "Corte + Sobrancelha com técnica de visagismo",
+      description: "",
       price: "R$ 90,00",
       features: [
         "Corte personalizado",
         "Acabamento de sobrancelha",
-        "Técnica de visagismo",
+        "",
         "Atendimento a domicílio"
       ]
     },
     {
       id: 2,
       title: "Barba Completa",
-      description: "Barba terapêutica com toalha quente",
+      description: "",
       price: "R$ 50,00",
       features: [
-        "Barba terapêutica",
-        "Toalha quente",
-        "Óleos essenciais",
-        "Massagem facial"
+        "",
+        "",
+        "",
+        ""
       ]
     },
     {
@@ -43,9 +43,9 @@ export default function ServicesOptions() {
       description: "Corte + Sobrancelha + Barba",
       price: "R$ 130,00",
       features: [
-        "Corte personalizado",
-        "Acabamento de sobrancelha",
-        "Barba terapêutica",
+        "",
+        "",
+        "",
         "Transformação completa"
       ]
     }
